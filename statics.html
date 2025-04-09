@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>statics</title>
+<link rel="stylesheet" href="statics.css">
+</head>
+<body>
+    <header>
+        <DIV class="DIV1"> <a href="front.html" > <img src="imgs/LOGO.png" alt="logo"class="logo"> </a>
+       <h1 class="STAT">STATICS OF THE TOURNAMENT</h1>
+       <a href="front.html" class="HOME">
+          <H3>HOME</H3></a> </DIV>
+          
+         
+     </header>
+     
+        <h2>STATICS WILL BE AVAILABLE AFTER THE AFCON</h2>
+            <hr class="hr2">
+            <div class="content">
+                <h2>STATICS in :</h2>
+            
+            <div id="countdown"></div>
+            
+            <script>
+            // تعيين وقت البداية والانتهاء
+            const startDate = new Date(); // يمكنك تعيين وقت البداية كما تشاء
+            const endDate = new Date("FEBRUARY 11, 2024 21:00:00");
+            
+            // حساب الوقت المتبقي
+            function updateCountdown() {
+              const now = new Date();
+              const timeRemaining = endDate - now;
+            
+              const seconds = Math.floor((timeRemaining / 1000) % 60);
+              const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+              const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+              const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            
+              document.getElementById('countdown').innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+            
+              // إيقاف العد تنازلي عندما ينتهي الوقت
+              if (timeRemaining <= 0) {
+                clearInterval(intervalId);
+                document.getElementById('countdown').innerHTML = "here  we  go!";
+              }
+            }
+            
+            // تحديث العد تنازلي كل ثانية
+            const intervalId = setInterval(updateCountdown, 1000);
+            
+            // تشغيل الدالة للمرة الأولى عند تحميل الصفحة
+            updateCountdown();
+            </script>
+                </div>
+
+</body>
+</html>

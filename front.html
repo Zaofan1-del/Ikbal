@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="front.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo"> <img src="imgs/LOGO.png" alt="logo"></a>
+            <ul>
+                <li><a href="matches.html">matches</a></li>
+                <li><a href="page2..html">groups</a></li>
+                <li><a href="rank.html">ranking</a></li>
+       
+                <li><a href="statics.html">statics</a></li>
+            </ul>
+        </header>
+        <div class="content">
+    <h2>match of algeria will start in :</h2>
+
+<div id="countdown"></div>
+
+<script>
+// تعيين وقت البداية والانتهاء
+const startDate = new Date(); // يمكنك تعيين وقت البداية كما تشاء
+const endDate = new Date("JANUARY 15, 2024 21:00:00");
+
+// حساب الوقت المتبقي
+function updateCountdown() {
+  const now = new Date();
+  const timeRemaining = endDate - now;
+
+  const seconds = Math.floor((timeRemaining / 1000) % 60);
+  const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+  const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+
+  document.getElementById('countdown').innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+
+  // إيقاف العد تنازلي عندما ينتهي الوقت
+  if (timeRemaining <= 0) {
+    clearInterval(intervalId);
+    document.getElementById('countdown').innerHTML = "here  we  go!";
+  }
+}
+
+// تحديث العد تنازلي كل ثانية
+const intervalId = setInterval(updateCountdown, 1000);
+
+// تشغيل الدالة للمرة الأولى عند تحميل الصفحة
+updateCountdown();
+</script>
+    </div>
+    <footer>
+<a target="_blank" href="http://www.instagram.com/ammar_chelouche"><img src="imgs/insta.webp" alt=""></a>
+<a target="_blank" href="http://x.com/iiyad9/"><img src="imgs/x.png" alt=""></a>
+<a target="_blank" href="http://www.tiktok.com/@ace.iv/"><img src="imgs/tik.png" alt=""></a>
+    </footer>
+</div>
+</body>
+</html>
